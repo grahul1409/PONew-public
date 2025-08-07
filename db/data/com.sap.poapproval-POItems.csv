@@ -1,0 +1,12 @@
+# POItems Sample Data
+
+This file would contain sample line items for purchase orders in CSV format.
+
+Format: ID,parent_ID,lineNumber,description,quantity,amount,currency
+
+Example data would be structured as:
+- Line items linked to parent Purchase Orders
+- Each item with quantity, description, and monetary values
+- Supporting different currencies (USD, EUR, CAD)
+
+This is a placeholder for the actual POItems CSV data that would be loaded into the application.
