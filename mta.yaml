@@ -1,0 +1,60 @@
+_schema-version: "3.1"
+ID: PONew
+description: A simple CAP project.
+version: 1.0.0
+modules:
+- name: PONew-approuter
+  type: approuter.nodejs
+  path: app/approuter
+  requires:
+  - name: srv-api
+    group: destinations
+    properties:
+      forwardAuthToken: true
+      name: srv-api
+      url: ~{srv-url}
+  - name: PONew-auth
+  - name: PONew-destination-service
+    group: destinations
+    properties:
+      forwardAuthToken: false
+      name: ui5
+      url: https://ui5.sap.com
+  - name: PONew_html_repo_runtime
+  provides:
+  - name: app-api
+    properties:
+      app-protocol: ${protocol}
+      app-uri: ${default-uri}
+  parameters:
+    disk-quota: 1G
+    keep-existing-routes: true
+    memory: 512M
+  build-parameters:
+    ignore:
+    - .env
+    - node_modules/
+    - default-env.json
+- name: PONew-srv
+  type: nodejs
+  path: gen/srv
+  requires:
+  - name: PONew-db
+  - name: PONew-auth
+  provides:
+  - name: srv-api
+    properties:
+      srv-url: ${default-url}
+  parameters:
+    buildpack: nodejs_buildpack
+    readiness-health-check-http-endpoint: /health
+    readiness-health-check-type: http
+  build-parameters:
+    builder: npm-ci
+- name: PONew-db-deployer
+  type: hdb
+  path: gen/db
+  requires:
+  - name: PONew-db
+  parameters:
+    buildpack: nodejs_buildpack

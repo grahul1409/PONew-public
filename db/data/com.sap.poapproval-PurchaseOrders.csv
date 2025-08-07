@@ -1,0 +1,6 @@
+ID,poNumber,vendor,amount,currency,status,purchaseOrder,vendorAssignment,deliveryDate,location,paymentTerms,companyCode,description,user,approvedBy,approvedDate
+1,PO4500000001,SAJO USD INC,20000,CAD,Pending Approval,PO4500000001,Cost Center Digital Technology (9000128B),2026-01-31,CANADA,60 days net,CAT1,Support Hours,rahul.girmaji@consultsda.com,,
+2,PO4500000002,TECH SOLUTIONS LTD,15000,USD,Pending Approval,PO4500000002,IT Department Services,2026-02-15,USA,30 days net,CAT2,Software Licenses,nassim.yakine@consultsda.com,,
+3,PO4500000003,GLOBAL SERVICES INC,25000,EUR,Approved,PO4500000003,Marketing Division,2026-01-20,GERMANY,45 days net,CAT3,Consulting Services,johnson.jos@consultsda.com,Winston,2025-07-20T10:30:00Z
+4,PO4500000004,OFFICE SUPPLIES CO,5000,CAD,Pending Approval,PO4500000004,Admin Department,2026-02-28,CANADA,15 days net,CAT1,Office Equipment,rahul.girmaji@consultsda.com,,
+5,PO4500000005,TRAINING CORP,8000,USD,Pending Approval,PO4500000005,HR Department,2026-03-10,USA,30 days net,CAT2,Employee Training,nassim.yakine@consultsda.com,,
