@@ -1,0 +1,17 @@
+{
+  "deployer": {
+    "resources": {
+      "path": "dist",
+      "excludes": []
+    },
+    "targetServiceUrl": {
+      "destination": "PONew_html_repo_host"
+    },
+    "app": {
+      "name": "project1",
+      "content": {
+        "subPath": "dist"
+      }
+    }
+  }
+}

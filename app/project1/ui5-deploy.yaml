@@ -1,0 +1,52 @@
+# UI5 Tooling Configuration
+specVersion: '4.0'
+metadata:
+  name: project1
+type: application
+server:
+  customMiddleware:
+  - name: fiori-tools-proxy
+    afterMiddleware: compression
+    configuration:
+      ignoreCertError: false
+      ui5:
+        path:
+        - /resources
+        - /test-resources
+        url: https://ui5.sap.com
+      backend:
+      - path: /poapproval
+        url: http://localhost:4004
+  - name: fiori-tools-appreload
+    afterMiddleware: compression
+    configuration:
+      port: 35729
+      path: webapp
+      delay: 300
+  - name: sap-fe-mockserver
+    beforeMiddleware: csp
+    configuration:
+      mountPath: /
+      services:
+        - urlPath: /poapproval
+          metadataPath: ./webapp/localService/metadata.xml
+          mockdataPath: ./webapp/localService/data
+          generateMockData: true
+framework:
+  name: SAPUI5
+  version: "1.138.1"
+  libraries:
+    - name: sap.m
+    - name: sap.ui.core
+    - name: sap.f
+    - name: sap.suite.ui.generic.template
+    - name: sap.ui.comp
+    - name: sap.ui.generic.app
+    - name: sap.ui.table
+    - name: sap.ushell
+    - name: themelib_sap_horizon
+builder:
+  resources:
+    excludes:
+      - "/test/**"
+      - "/localService/**"
