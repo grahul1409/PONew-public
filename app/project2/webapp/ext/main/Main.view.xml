@@ -1,0 +1,45 @@
+<mvc:View
+    controllerName="project2.ext.main.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:macros="sap.fe.macros"
+    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+    xmlns:smartTable="sap.ui.comp.smarttable">
+    
+    <Page id="mainPage" title="Purchase Order Approval">
+        <content>
+            <VBox id="mainVBox" class="sapUiMediumMargin">              
+               
+                <macros:FilterBar 
+                    id="filterBar"
+                    metaPath="@com.sap.vocabularies.UI.v1.SelectionFields"
+                    contextPath="/UserPurchaseOrders"
+                    liveMode="true"
+                    showMessages="true"
+                    class="sapUiMediumMarginBottom"/>
+               
+                <!-- Custom Toolbar for Reset Button -->
+                <Toolbar>
+                    <ToolbarSpacer/>
+                </Toolbar>
+               
+                <macros:Table 
+                    id="purchaseOrdersTable"
+                    metaPath="@com.sap.vocabularies.UI.v1.LineItem"
+                    contextPath="/UserPurchaseOrders"
+                    readOnly="true"
+                    isSearchable="true"
+                    enableExport="true"
+                    enablePaste="false"
+                    selectionMode="None"
+                    variantManagement="Control"
+                    personalization="Column,Sort,Filter"
+                    headerVisible="true"
+                    header="User-Specific Purchase Orders"
+                    rowPress="onRowPress"
+                    filterBar="filterBar">
+                </macros:Table>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>
