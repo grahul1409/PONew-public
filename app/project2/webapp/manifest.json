@@ -1,0 +1,133 @@
+{
+  "_version": "1.65.0",
+  "sap.app": {
+    "id": "project2",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:fpm",
+      "version": "1.18.3",
+      "toolsId": "984d7c68-a128-4990-93cb-b442e18c7e5c"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/poapproval/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "odataVersion": "4.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.138.1",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.ui.fl": {},
+        "sap.fe.core": {},
+        "sap.fe.macros": {},
+        "sap.uxap": {},
+        "sap.f": {},
+        "sap.ui.layout": {},
+        "sap.ui.comp": {},
+        "sap.suite.ui.commons": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "project2.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+        }
+      },
+      "@i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "uri": "i18n/i18n.properties"
+      }
+    },
+    "resources": {
+      "css": []
+    },
+    "routing": {
+      "config": {},
+      "routes": [
+        {
+          "name": "CustomPageRoute",
+          "pattern": ":?query:",
+          "target": "CustomPageTarget"
+        },
+        {
+          "pattern": "UserPurchaseOrders({key}):?query:",
+          "name": "PurchaseOrdersObjectPage",
+          "target": "PurchaseOrdersObjectPage"
+        }
+      ],
+      "targets": {
+        "CustomPageTarget": {
+          "type": "Component",
+          "id": "CustomPage",
+          "name": "sap.fe.core.fpm",
+          "options": {
+            "settings": {
+              "viewName": "project2.ext.main.Main",
+              "entitySet": "UserPurchaseOrders",
+              "contextPath": "/UserPurchaseOrders"
+            }
+          }
+        },
+        "PurchaseOrdersObjectPage": {
+          "type": "Component",
+          "id": "PurchaseOrdersObjectPage",
+          "name": "sap.fe.core.fpm",
+          "options": {
+            "settings": {
+              "viewName": "project2.ext.main.ObjectPage",
+              "entitySet": "UserPurchaseOrders",
+              "contextPath": "/UserPurchaseOrders"
+            }
+          }
+        }
+      }
+    }
+  },
+  "sap.fiori": {}
+}
