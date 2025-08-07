@@ -1,0 +1,134 @@
+<mvc:View
+    controllerName="project2.ext.main.ObjectPage"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:macros="sap.fe.macros"
+    xmlns:core="sap.ui.core">
+    
+    <Page id="objectPage" 
+          title="{poNumber} - Purchase Order Details" 
+          showNavButton="true" 
+          navButtonPress="onNavBack">
+        
+        <content>
+            <VBox class="sapUiMediumMargin">
+                
+                <!-- Header Information -->
+                <Panel headerText="Purchase Order Information" class="sapUiMediumMarginBottom">
+                    <VBox class="sapUiSmallMargin">
+                        <HBox>
+                            <Label text="PO Number:" class="sapUiSmallMarginEnd"/>
+                            <Text text="{poNumber}" class="sapUiSmallMarginEnd"/>
+                        </HBox>
+                        <HBox>
+                            <Label text="Vendor:" class="sapUiSmallMarginEnd"/>
+                            <Text text="{vendor}" class="sapUiSmallMarginEnd"/>
+                        </HBox>
+                        <HBox>
+                            <Label text="Amount:" class="sapUiSmallMarginEnd"/>
+                            <Text text="{amount} {currency}" class="sapUiSmallMarginEnd"/>
+                        </HBox>
+                        <HBox>
+                            <Label text="Status:" class="sapUiSmallMarginEnd"/>
+                            <ObjectStatus 
+                                text="{status}" 
+                                state="{
+                                    path: 'status',
+                                    formatter: '.formatStatusState'
+                                }"/>
+                        </HBox>
+                        <HBox>
+                            <Label text="Created On:" class="sapUiSmallMarginEnd"/>
+                            <Text text="{
+                                path: 'createdAt',
+                                type: 'sap.ui.model.odata.type.DateTimeOffset'
+                            }" class="sapUiSmallMarginEnd"/>
+                        </HBox>
+                    </VBox>
+                </Panel>
+                
+                <!-- Action Buttons -->
+                <Toolbar class="sapUiMediumMarginBottom">
+                    <ToolbarSpacer/>
+                    <Button 
+                        id="approveButton"
+                        text="Approve" 
+                        type="Emphasized" 
+                        icon="sap-icon://accept"
+                        press="onApprove"
+                        visible="{
+                            path: 'status',
+                            formatter: '.formatApproveButtonVisible'
+                        }"/>
+                    <Button 
+                        id="sendBackButton"
+                        text="Send Back" 
+                        type="Reject" 
+                        icon="sap-icon://decline"
+                        press="onSendBack"
+                        visible="{
+                            path: 'status',
+                            formatter: '.formatSendBackButtonVisible'
+                        }"
+                        class="sapUiSmallMarginBegin"/>
+                </Toolbar>
+                
+                <!-- Purchase Order Items -->
+                <Panel headerText="Purchase Order Items">
+                    <macros:Table 
+                        id="poItemsTable"
+                        contextPath="items"
+                        metaPath="@com.sap.vocabularies.UI.v1.LineItem"
+                        readOnly="true"
+                        enableExport="false"
+                        enablePaste="false"
+                        selectionMode="None"
+                        headerVisible="false">
+                    </macros:Table>
+                </Panel>
+                
+                <!-- Custom Sections Using Macros -->
+                <Panel headerText="Additional Details" class="sapUiMediumMarginTop">
+                    <macros:Form
+                        id="poDetailsForm"
+                        metaPath="@com.sap.vocabularies.UI.v1.FieldGroup#Details"
+                        readOnly="true">
+                    </macros:Form>
+                </Panel>
+                
+                <!-- History Section -->
+                <Panel headerText="Approval History" class="sapUiMediumMarginTop">
+                    <VBox class="sapUiSmallMargin">
+                        <HBox>
+                            <Label text="Approved By:" class="sapUiSmallMarginEnd"/>
+                            <Text text="{approvedBy}" class="sapUiSmallMarginEnd"/>
+                        </HBox>
+                        <HBox>
+                            <Label text="Approved On:" class="sapUiSmallMarginEnd"/>
+                            <Text text="{
+                                path: 'approvedAt',
+                                type: 'sap.ui.model.odata.type.DateTimeOffset'
+                            }" class="sapUiSmallMarginEnd"/>
+                        </HBox>
+                        <HBox>
+                            <Label text="Comments:" class="sapUiSmallMarginEnd"/>
+                            <Text text="{comments}" class="sapUiSmallMarginEnd"/>
+                        </HBox>
+                    </VBox>
+                </Panel>
+                
+            </VBox>
+        </content>
+        
+        <!-- Footer Toolbar -->
+        <footer>
+            <Toolbar>
+                <ToolbarSpacer/>
+                <Button 
+                    text="Back to List" 
+                    press="onNavBack"/>
+            </Toolbar>
+        </footer>
+        
+    </Page>
+</mvc:View>
