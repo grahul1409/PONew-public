@@ -1,0 +1,30 @@
+{
+  "xsappname": "PONew-app",
+  "tenant-mode": "dedicated",
+  "description": "Security profile for PONew",
+  "scopes": [
+    {
+      "name": "uaa.user",
+      "description": "UAA"
+    }
+  ],
+  "attributes": [],
+  "role-templates": [
+    {
+      "name": "Viewer",
+      "description": "View purchase orders",
+      "scope-references": [
+        "uaa.user"
+      ],
+      "attribute-references": []
+    },
+    {
+      "name": "Admin",
+      "description": "Manage purchase orders",
+      "scope-references": [
+        "uaa.user"
+      ],
+      "attribute-references": []
+    }
+  ]
+}
