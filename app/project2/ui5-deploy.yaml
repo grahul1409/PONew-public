@@ -1,0 +1,38 @@
+# UI5 Tooling Configuration
+specVersion: '4.0'
+metadata:
+  name: project2
+type: application
+server:
+  customMiddleware:
+  - name: fiori-tools-proxy
+    afterMiddleware: compression
+    configuration:
+      ignoreCertError: false
+      ui5:
+        path:
+        - /resources
+        - /test-resources
+        url: https://ui5.sap.com
+      backend:
+      - path: /poapproval
+        url: http://localhost:4004
+  - name: fiori-tools-appreload
+    afterMiddleware: compression
+    configuration:
+      port: 35729
+      path: webapp
+      delay: 300
+  - name: sap-fe-mockserver
+    beforeMiddleware: csp
+    configuration:
+      mountPath: /
+      services:
+      - urlPath: /poapproval
+        metadataPath: ./webapp/localService/metadata.xml
+        mockdataPath: ./webapp/localService/mockdata
+        generateMockData: true
+builder:
+  customTasks:
+  - name: ui5-task-flatten-library
+    afterTask: generateComponentPreload
