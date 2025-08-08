@@ -1,0 +1,17 @@
+/* Custom button styling */
+.sapUiSizeCompact .sapMBtn.customRejectButton .sapMBtnInner {
+    background-color: #dc3545 !important; /* Red background */
+    border-color: #dc3545 !important;
+    color: white !important;
+}
+
+.sapUiSizeCompact .sapMBtn.customRejectButton:hover .sapMBtnInner {
+    background-color: #c82333 !important; /* Darker red on hover */
+    border-color: #bd2130 !important;
+}
+
+.sapUiSizeCompact .sapMBtn.customUserInfoButton .sapMBtnInner {
+    background-color: #007bff !important; /* Blue background */
+    border-color: #007bff !important;
+    color: white !important;
+}

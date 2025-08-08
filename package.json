@@ -1,12 +1,12 @@
 {
-  "name": "PONew",
+  "name": "ponew",
   "version": "1.0.0",
   "description": "A simple CAP project.",
   "repository": "https://github.com/grahul1409/PONew-public",
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
-    "@cap-js/hana": "^1.9.1",
+    "@cap-js/hana": "^2.1.2",
     "@sap/cds": "^9",
     "@sap/xssec": "^4",
     "express": "^4",

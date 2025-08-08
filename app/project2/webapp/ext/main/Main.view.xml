@@ -21,24 +21,51 @@
                 <!-- Custom Toolbar for Reset Button -->
                 <Toolbar>
                     <ToolbarSpacer/>
+    
                 </Toolbar>
                
+                            <macros:Table 
+                                id="purchaseOrdersTable"
+                                metaPath="@com.sap.vocabularies.UI.v1.LineItem"
+                                contextPath="/UserPurchaseOrders"
+                                readOnly="true"
+                                isSearchable="true"
+                                enableExport="true"
+                                enablePaste="false"
+                                selectionMode="None"
+                                variantManagement="Control"
+                                personalization="Column,Sort,Filter"
+                                headerVisible="true"
+                                header="User-Specific Purchase Orders"
+                                rowPress="onRowPress"
+                                filterBar="filterBar">
+                            </macros:Table>
+                           <!--<macros:FilterBar 
+                    id="smartFilterBar"
+                    metaPath="@com.sap.vocabularies.UI.v1.SelectionFields"
+                    contextPath="/UserPurchaseOrders"
+                    liveMode="true"
+                    showMessages="true"
+                    showClearButton="true"
+                    search="onFilterBarSearch"
+                    class="sapUiMediumMarginBottom"/>
+                
+                
                 <macros:Table 
                     id="purchaseOrdersTable"
                     metaPath="@com.sap.vocabularies.UI.v1.LineItem"
                     contextPath="/UserPurchaseOrders"
                     readOnly="true"
-                    isSearchable="true"
                     enableExport="true"
-                    enablePaste="false"
-                    selectionMode="None"
-                    variantManagement="Control"
-                    personalization="Column,Sort,Filter"
-                    headerVisible="true"
+                    selectionMode="Single"
                     header="User-Specific Purchase Orders"
-                    rowPress="onRowPress"
-                    filterBar="filterBar">
-                </macros:Table>
+                    filterBar="smartFilterBar"
+                    rowPress="onRowPress">
+                </macros:Table>-->        
+                       
+
+               
+               
             </VBox>
         </content>
     </Page>

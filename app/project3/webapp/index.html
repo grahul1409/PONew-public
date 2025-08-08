@@ -1,12 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{appTitle}}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>App Title</title>
+    <style>
+        html, body, body > div, #container, #container-uiarea {
+            height: 100%;
+        }
+    </style>
     <script
         id="sap-ui-bootstrap"
-        src="https://ui5.sap.com/resources/sap-ui-core.js"
+        src="https://sapui5.hana.ondemand.com/1.138.1/resources/sap-ui-core.js"
         data-sap-ui-theme="sap_horizon"
         data-sap-ui-resourceroots='{
             "project3": "./"
@@ -17,7 +23,13 @@
         data-sap-ui-frameOptions="trusted"
     ></script>
 </head>
-<body id="content" class="sapUiBody">
-    <div data-sap-ui-component data-name="project3" data-id="container" data-settings='{"id" : "project3"}'></div>
+<body class="sapUiBody sapUiSizeCompact" id="content">
+    <div
+        data-sap-ui-component
+        data-name="project3"
+        data-id="container"
+        data-settings='{"id" : "project3"}'
+        data-handle-validation="true"
+    ></div>
 </body>
 </html>

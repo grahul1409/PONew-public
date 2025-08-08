@@ -2,133 +2,170 @@
     controllerName="project2.ext.main.ObjectPage"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
-    xmlns:macros="sap.fe.macros"
-    xmlns:core="sap.ui.core">
+    xmlns:uxap="sap.uxap"
+    xmlns:f="sap.f"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:macros="sap.fe.macros">
     
-    <Page id="objectPage" 
-          title="{poNumber} - Purchase Order Details" 
-          showNavButton="true" 
-          navButtonPress="onNavBack">
+    <uxap:ObjectPageLayout id="ObjectPageLayout" 
+                          showTitleInHeaderContent="true"
+                          alwaysShowContentHeader="false"
+                          preserveHeaderStateOnScroll="false"
+                          headerContentPinnable="true"
+                          isChildPage="true"
+                          upperCaseAnchorBar="false">
         
-        <content>
-            <VBox class="sapUiMediumMargin">
+        <!-- Object Page Header -->
+        <uxap:headerTitle>
+            <uxap:ObjectPageDynamicHeaderTitle>
+                <uxap:expandedHeading>
+                    <Title text="Purchase Order {poNumber}" wrapping="true"/>
+                </uxap:expandedHeading>
                 
-                <!-- Header Information -->
-                <Panel headerText="Purchase Order Information" class="sapUiMediumMarginBottom">
-                    <VBox class="sapUiSmallMargin">
-                        <HBox>
-                            <Label text="PO Number:" class="sapUiSmallMarginEnd"/>
-                            <Text text="{poNumber}" class="sapUiSmallMarginEnd"/>
-                        </HBox>
-                        <HBox>
-                            <Label text="Vendor:" class="sapUiSmallMarginEnd"/>
-                            <Text text="{vendor}" class="sapUiSmallMarginEnd"/>
-                        </HBox>
-                        <HBox>
-                            <Label text="Amount:" class="sapUiSmallMarginEnd"/>
-                            <Text text="{amount} {currency}" class="sapUiSmallMarginEnd"/>
-                        </HBox>
-                        <HBox>
-                            <Label text="Status:" class="sapUiSmallMarginEnd"/>
-                            <ObjectStatus 
-                                text="{status}" 
-                                state="{
-                                    path: 'status',
-                                    formatter: '.formatStatusState'
-                                }"/>
-                        </HBox>
-                        <HBox>
-                            <Label text="Created On:" class="sapUiSmallMarginEnd"/>
-                            <Text text="{
-                                path: 'createdAt',
-                                type: 'sap.ui.model.odata.type.DateTimeOffset'
-                            }" class="sapUiSmallMarginEnd"/>
-                        </HBox>
-                    </VBox>
-                </Panel>
+                <uxap:snappedHeading>
+                    <FlexBox wrap="Wrap" fitContainer="true" alignItems="Center">
+                        <Title text="PO {poNumber}" wrapping="true" class="sapUiTinyMarginEnd"/>
+                    </FlexBox>
+                </uxap:snappedHeading>
                 
-                <!-- Action Buttons -->
-                <Toolbar class="sapUiMediumMarginBottom">
-                    <ToolbarSpacer/>
-                    <Button 
-                        id="approveButton"
-                        text="Approve" 
-                        type="Emphasized" 
-                        icon="sap-icon://accept"
-                        press="onApprove"
-                        visible="{
-                            path: 'status',
-                            formatter: '.formatApproveButtonVisible'
-                        }"/>
-                    <Button 
-                        id="sendBackButton"
-                        text="Send Back" 
-                        type="Reject" 
-                        icon="sap-icon://decline"
-                        press="onSendBack"
-                        visible="{
-                            path: 'status',
-                            formatter: '.formatSendBackButtonVisible'
-                        }"
-                        class="sapUiSmallMarginBegin"/>
-                </Toolbar>
+                <uxap:expandedContent>
+                    <Text text="{vendor}"/>
+                </uxap:expandedContent>
                 
-                <!-- Purchase Order Items -->
-                <Panel headerText="Purchase Order Items">
-                    <macros:Table 
-                        id="poItemsTable"
-                        contextPath="items"
-                        metaPath="@com.sap.vocabularies.UI.v1.LineItem"
-                        readOnly="true"
-                        enableExport="false"
-                        enablePaste="false"
-                        selectionMode="None"
-                        headerVisible="false">
-                    </macros:Table>
-                </Panel>
+                <uxap:snappedContent>
+                    <Text text="{vendor}"/>
+                </uxap:snappedContent>
                 
-                <!-- Custom Sections Using Macros -->
-                <Panel headerText="Additional Details" class="sapUiMediumMarginTop">
-                    <macros:Form
-                        id="poDetailsForm"
-                        metaPath="@com.sap.vocabularies.UI.v1.FieldGroup#Details"
-                        readOnly="true">
-                    </macros:Form>
-                </Panel>
-                
-                <!-- History Section -->
-                <Panel headerText="Approval History" class="sapUiMediumMarginTop">
-                    <VBox class="sapUiSmallMargin">
-                        <HBox>
-                            <Label text="Approved By:" class="sapUiSmallMarginEnd"/>
-                            <Text text="{approvedBy}" class="sapUiSmallMarginEnd"/>
-                        </HBox>
-                        <HBox>
-                            <Label text="Approved On:" class="sapUiSmallMarginEnd"/>
-                            <Text text="{
-                                path: 'approvedAt',
-                                type: 'sap.ui.model.odata.type.DateTimeOffset'
-                            }" class="sapUiSmallMarginEnd"/>
-                        </HBox>
-                        <HBox>
-                            <Label text="Comments:" class="sapUiSmallMarginEnd"/>
-                            <Text text="{comments}" class="sapUiSmallMarginEnd"/>
-                        </HBox>
-                    </VBox>
-                </Panel>
-                
-            </VBox>
-        </content>
+                <uxap:actions>
+                    <Button id="approveBtn" 
+                           text="Approve" 
+                           type="Emphasized" 
+                           icon="sap-icon://accept"
+                           press="onApprove"/>
+                    <Button id="sendBackBtn" 
+                           text="Send Back" 
+                           type="Reject" 
+                           icon="sap-icon://decline"
+                           press="onSendBack"/>
+                    <!--<Button id="testReadPOBtn" 
+                           text="Test Read PO" 
+                           type="Default" 
+                           icon="sap-icon://database"
+                           press="readPO"/>-->
+                    <Button id="backBtn" 
+                           text="Back" 
+                           icon="sap-icon://nav-back"
+                           press="onNavBack"/>
+                </uxap:actions>
+            </uxap:ObjectPageDynamicHeaderTitle>
+        </uxap:headerTitle>
         
-        <!-- Footer Toolbar -->
-        <footer>
-            <Toolbar>
-                <ToolbarSpacer/>
-                <Button 
-                    text="Back to List" 
-                    press="onNavBack"/>
-            </Toolbar>
-        </footer>
+        <!-- Header Content -->
+        <uxap:headerContent>
+            <FlexBox wrap="Wrap" fitContainer="true" alignItems="Start" class="sapUiMediumMarginBottom">
+                <VBox class="sapUiMediumMarginEnd">
+                    <Label text="Status" class="sapUiTinyMarginBottom"/>
+                    <ObjectStatus text="{status}" 
+                                 state="{path: 'status', formatter: '.formatStatusState'}"
+                                 class="sapUiTinyMarginBottom"/>
+                </VBox>
+                <VBox class="sapUiMediumMarginEnd">
+                    <Label text="Amount" class="sapUiTinyMarginBottom"/>
+                    <ObjectNumber number="{amount}" 
+                                 unit="{currency}"
+                                 emphasized="true"
+                                 class="sapUiTinyMarginBottom"/>
+                </VBox>
+                <VBox class="sapUiMediumMarginEnd">
+                    <Label text="Delivery Date" class="sapUiTinyMarginBottom"/>
+                    <Text text="{path: 'deliveryDate', type: 'sap.ui.model.odata.type.DateTimeOffset'}" 
+                          class="sapUiTinyMarginBottom"/>
+                </VBox>
+                <VBox class="sapUiMediumMarginEnd">
+                    <Label text="Company Code" class="sapUiTinyMarginBottom"/>
+                    <Text text="{companyCode}" class="sapUiTinyMarginBottom"/>
+                </VBox>
+            </FlexBox>
+        </uxap:headerContent>
         
-    </Page>
+        <!-- Object Page Sections -->
+        <uxap:sections>
+            
+            <!-- General Information Section -->
+            <uxap:ObjectPageSection id="generalInfoSection" 
+                                   title="General Information" 
+                                   importance="High">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection id="generalInfoSubSection" 
+                                              title="Purchase Order Details">
+                        <uxap:blocks>
+                            <form:SimpleForm id="objGeneralInfoForm"
+                                         editable="false"
+                                         layout="ResponsiveGridLayout"
+                                         title="Basic Information"
+                                         labelSpanXL="3" 
+                                         labelSpanL="3" 
+                                         labelSpanM="3" 
+                                         labelSpanS="12"
+                                         adjustLabelSpan="false"
+                                         emptySpanXL="4" 
+                                         emptySpanL="4" 
+                                         emptySpanM="4" 
+                                         emptySpanS="0"
+                                         columnsXL="1" 
+                                         columnsL="1" 
+                                         columnsM="1" 
+                                         singleContainerFullSize="false">
+                                <form:content>
+                                    <Label text="PO Number"/>
+                                    <Text text="{poNumber}"/>
+                                    
+                                    <Label text="Vendor"/>
+                                    <Text text="{vendor}"/>
+                                    
+                                    <Label text="Description"/>
+                                    <Text text="{description}"/>
+                                    
+                                    <Label text="Amount"/>
+                                    <ObjectNumber number="{amount}" unit="{currency}"/>
+                                    
+                                    <Label text="Status"/>
+                                    <ObjectStatus text="{status}" 
+                                                 state="{path: 'status', formatter: '.formatStatusState'}"/>
+                                    
+                                    <Label text="Delivery Date"/>
+                                    <Text text="{path: 'deliveryDate', type: 'sap.ui.model.odata.type.DateTimeOffset'}"/>
+                                    
+                                    <Label text="Company Code"/>
+                                    <Text text="{companyCode}"/>
+                                </form:content>
+                            </form:SimpleForm>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+            
+            <!-- Purchase Order Items Section -->
+            <uxap:ObjectPageSection id="itemsSection" 
+                                   title="Purchase Order Items" 
+                                   importance="High">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection id="itemsSubSection" 
+                                              title="Line Items">
+                        <uxap:blocks>
+                            <macros:Table 
+                                id="objItemsTable"
+                                metaPath="items/@com.sap.vocabularies.UI.v1.LineItem"
+                                readOnly="true"
+                                enableExport="true"
+                                enablePaste="false"
+                                header="Purchase Order Items"/>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+            
+        </uxap:sections>
+    </uxap:ObjectPageLayout>
+   
 </mvc:View>

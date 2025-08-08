@@ -4,3 +4,33 @@ ID,poNumber,vendor,amount,currency,status,purchaseOrder,vendorAssignment,deliver
 3,PO4500000003,GLOBAL SERVICES INC,25000,EUR,Approved,PO4500000003,Marketing Division,2026-01-20,GERMANY,45 days net,CAT3,Consulting Services,johnson.jos@consultsda.com,Winston,2025-07-20T10:30:00Z
 4,PO4500000004,OFFICE SUPPLIES CO,5000,CAD,Pending Approval,PO4500000004,Admin Department,2026-02-28,CANADA,15 days net,CAT1,Office Equipment,rahul.girmaji@consultsda.com,,
 5,PO4500000005,TRAINING CORP,8000,USD,Pending Approval,PO4500000005,HR Department,2026-03-10,USA,30 days net,CAT2,Employee Training,nassim.yakine@consultsda.com,,
+6,PO4500000006,MANUFACTURING PLUS,35000,USD,Pending Approval,PO4500000006,Production Department,2026-02-05,USA,45 days net,CAT1,Raw Materials,johnson.jos@consultsda.com,,
+7,PO4500000007,LOGISTICS EXPRESS,12000,EUR,Approved,PO4500000007,Supply Chain Division,2026-01-25,FRANCE,30 days net,CAT3,Transportation Services,rahul.girmaji@consultsda.com,Sarah,2025-07-21T14:15:00Z
+8,PO4500000008,SECURITY SYSTEMS,18000,CAD,Pending Approval,PO4500000008,Facilities Management,2026-03-01,CANADA,60 days net,CAT2,Security Equipment,nassim.yakine@consultsda.com,,
+9,PO4500000009,CLOUD TECH INC,22000,USD,Pending Approval,PO4500000009,IT Infrastructure,2026-02-20,USA,30 days net,CAT1,Cloud Services,johnson.jos@consultsda.com,,
+10,PO4500000010,MAINTENANCE PRO,9500,EUR,Approved,PO4500000010,Facilities Department,2026-01-30,GERMANY,45 days net,CAT3,Equipment Maintenance,rahul.girmaji@consultsda.com,Michael,2025-07-22T09:45:00Z
+11,PO4500000011,DESIGN STUDIO,14000,USD,Pending Approval,PO4500000011,Creative Department,2026-02-12,USA,30 days net,CAT2,Graphic Design Services,nassim.yakine@consultsda.com,,
+12,PO4500000012,LEGAL ADVISORS,28000,CAD,Pending Approval,PO4500000012,Legal Department,2026-03-15,CANADA,60 days net,CAT1,Legal Consultation,johnson.jos@consultsda.com,,
+13,PO4500000013,ENERGY SOLUTIONS,45000,EUR,Approved,PO4500000013,Utilities Division,2026-01-18,NETHERLANDS,45 days net,CAT3,Solar Panel Installation,rahul.girmaji@consultsda.com,David,2025-07-23T11:20:00Z
+14,PO4500000014,CATERING SERVICES,6500,USD,Pending Approval,PO4500000014,Employee Services,2026-02-25,USA,15 days net,CAT2,Corporate Events,nassim.yakine@consultsda.com,,
+15,PO4500000015,RESEARCH LAB,32000,CAD,Pending Approval,PO4500000015,R&D Department,2026-03-05,CANADA,45 days net,CAT1,Laboratory Equipment,johnson.jos@consultsda.com,,
+16,PO4500000016,TRANSPORT LOGISTICS,16000,EUR,Approved,PO4500000016,Shipping Department,2026-01-28,SPAIN,30 days net,CAT3,Fleet Management,rahul.girmaji@consultsda.com,Lisa,2025-07-24T16:30:00Z
+17,PO4500000017,MARKETING AGENCY,19000,USD,Pending Approval,PO4500000017,Marketing Division,2026-02-18,USA,30 days net,CAT2,Digital Marketing Campaign,nassim.yakine@consultsda.com,,
+18,PO4500000018,CONSTRUCTION CO,55000,CAD,Pending Approval,PO4500000018,Facilities Management,2026-03-20,CANADA,60 days net,CAT1,Building Renovation,johnson.jos@consultsda.com,,
+19,PO4500000019,DATA ANALYTICS,24000,EUR,Approved,PO4500000019,Business Intelligence,2026-01-22,IRELAND,45 days net,CAT3,Analytics Platform,rahul.girmaji@consultsda.com,Robert,2025-07-25T13:10:00Z
+20,PO4500000020,PRINTING SERVICES,7500,USD,Pending Approval,PO4500000020,Communications Dept,2026-02-28,USA,15 days net,CAT2,Marketing Materials,nassim.yakine@consultsda.com,,
+21,PO4500000021,TELECOM PROVIDER,38000,CAD,Pending Approval,PO4500000021,IT Communications,2026-03-12,CANADA,45 days net,CAT1,Network Infrastructure,johnson.jos@consultsda.com,,
+22,PO4500000022,FURNITURE DEPOT,13500,EUR,Approved,PO4500000022,Office Management,2026-01-26,ITALY,30 days net,CAT3,Office Furniture,rahul.girmaji@consultsda.com,Emma,2025-07-26T10:45:00Z
+23,PO4500000023,SOFTWARE VENDOR,29000,USD,Pending Approval,PO4500000023,IT Development,2026-02-22,USA,30 days net,CAT2,Enterprise Software,nassim.yakine@consultsda.com,,
+24,PO4500000024,CLEANING SERVICES,8500,CAD,Pending Approval,PO4500000024,Facilities Management,2026-03-08,CANADA,30 days net,CAT1,Janitorial Services,johnson.jos@consultsda.com,,
+25,PO4500000025,CONSULTING FIRM,42000,EUR,Approved,PO4500000025,Strategy Department,2026-01-24,SWITZERLAND,45 days net,CAT3,Management Consulting,rahul.girmaji@consultsda.com,James,2025-07-27T15:25:00Z
+26,PO4500000026,EQUIPMENT RENTAL,17500,USD,Pending Approval,PO4500000026,Operations Department,2026-02-16,USA,30 days net,CAT2,Heavy Machinery Rental,nassim.yakine@consultsda.com,,
+27,PO4500000027,INSURANCE BROKER,21000,CAD,Pending Approval,PO4500000027,Risk Management,2026-03-18,CANADA,60 days net,CAT1,Corporate Insurance,johnson.jos@consultsda.com,,
+28,PO4500000028,TRAVEL AGENCY,11000,EUR,Approved,PO4500000028,Human Resources,2026-01-29,AUSTRIA,30 days net,CAT3,Business Travel Services,rahul.girmaji@consultsda.com,Anna,2025-07-28T12:15:00Z
+29,PO4500000029,PACKAGING SOLUTIONS,26000,USD,Pending Approval,PO4500000029,Production Department,2026-02-14,USA,45 days net,CAT2,Product Packaging,nassim.yakine@consultsda.com,,
+30,PO4500000030,WASTE MANAGEMENT,9000,CAD,Pending Approval,PO4500000030,Environmental Dept,2026-03-06,CANADA,30 days net,CAT1,Waste Disposal Services,johnson.jos@consultsda.com,,
+31,PO4500000031,AUDIT SERVICES,33000,EUR,Approved,PO4500000031,Finance Department,2026-01-21,BELGIUM,45 days net,CAT3,Financial Audit,rahul.girmaji@consultsda.com,Thomas,2025-07-29T14:40:00Z
+32,PO4500000032,RECRUITMENT AGENCY,15500,USD,Pending Approval,PO4500000032,Human Resources,2026-02-26,USA,30 days net,CAT2,Executive Search,nassim.yakine@consultsda.com,,
+33,PO4500000033,LABORATORY SUPPLIES,18500,CAD,Pending Approval,PO4500000033,Quality Assurance,2026-03-14,CANADA,45 days net,CAT1,Testing Equipment,johnson.jos@consultsda.com,,
+34,PO4500000034,EVENT MANAGEMENT,12500,EUR,Approved,PO4500000034,Corporate Communications,2026-01-27,PORTUGAL,30 days net,CAT3,Conference Organization,rahul.girmaji@consultsda.com,Sophie,2025-07-30T11:55:00Z
+35,PO4500000035,TRANSLATION SERVICES,8000,USD,Pending Approval,PO4500000035,International Division,2026-02-24,USA,15 days net,CAT2,Document Translation,nassim.yakine@consultsda.com,,

@@ -41,8 +41,21 @@ annotate service.PurchaseOrders with @(
 );
 
 annotate service.POItems with @(
-  Common.SemanticKey: [lineNumber]
-);
+  Common.SemanticKey: [lineNumber],
+  UI.LineItem: [
+    { $Type: 'UI.DataField', Value: lineNumber },
+    { $Type: 'UI.DataField', Value: description },
+    { $Type: 'UI.DataField', Value: quantity },
+    { $Type: 'UI.DataField', Value: amount },
+    { $Type: 'UI.DataField', Value: currency }
+  ]
+) {
+  lineNumber @Common.Label: 'Line Number';
+  description @Common.Label: 'Description';
+  quantity @Common.Label: 'Quantity';
+  amount @Common.Label: 'Amount';
+  currency @Common.Label: 'Currency';
+};
 
 // Annotations for Object Page
 annotate service.PurchaseOrders with @(

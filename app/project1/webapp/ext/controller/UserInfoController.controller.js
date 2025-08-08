@@ -1,8 +1,8 @@
 sap.ui.define([
-    "sap.ui.core.mvc.ControllerExtension",
-    "sap.m.MessageBox",
-    "sap.ui.model.Filter",
-    "sap.ui.model.FilterOperator"
+    "sap/ui/core/mvc/ControllerExtension",
+    "sap/m/MessageBox",
+    "sap/ui/model/Filter",
+    "sap/ui/model/FilterOperator"
 ], function (ControllerExtension, MessageBox, Filter, FilterOperator) {
     "use strict";
 

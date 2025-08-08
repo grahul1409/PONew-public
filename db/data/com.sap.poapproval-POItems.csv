@@ -1,12 +1,208 @@
-# POItems Sample Data
-
-This file would contain sample line items for purchase orders in CSV format.
-
-Format: ID,parent_ID,lineNumber,description,quantity,amount,currency
-
-Example data would be structured as:
-- Line items linked to parent Purchase Orders
-- Each item with quantity, description, and monetary values
-- Supporting different currencies (USD, EUR, CAD)
-
-This is a placeholder for the actual POItems CSV data that would be loaded into the application.
+ID,parent_ID,lineNumber,description,quantity,amount,currency
+1,1,1,Support Hours,1,15000,CAD
+2,1,2,Enhancements,1,5000,CAD
+3,2,1,Software License A,5,10000,USD
+4,2,2,Software License B,3,5000,USD
+5,3,1,Consulting Phase 1,1,15000,EUR
+6,3,2,Consulting Phase 2,1,10000,EUR
+7,4,1,Office Chairs,10,3000,CAD
+8,4,2,Desk Equipment,5,2000,CAD
+9,5,1,Training Program A,20,5000,USD
+10,5,2,Training Materials,1,3000,USD
+11,6,1,Steel Sheets,100,8000,USD
+12,6,2,Aluminum Bars,50,7000,USD
+13,6,3,Copper Wire,200,5000,USD
+14,6,4,Plastic Components,300,4000,USD
+15,6,5,Rubber Gaskets,150,3000,USD
+16,6,6,Fasteners,500,2000,USD
+17,6,7,Adhesives,25,1500,USD
+18,6,8,Packaging Materials,100,1000,USD
+19,6,9,Quality Control Tools,10,2500,USD
+20,6,10,Safety Equipment,20,1000,USD
+21,7,1,Freight Services,1,5000,EUR
+22,7,2,Warehouse Storage,1,3000,EUR
+23,7,3,Customs Clearance,1,2000,EUR
+24,7,4,Insurance Coverage,1,1500,EUR
+25,7,5,Documentation,1,500,EUR
+26,8,1,Security Cameras,15,8000,CAD
+27,8,2,Access Control System,1,5000,CAD
+28,8,3,Alarm System,1,3000,CAD
+29,8,4,Installation Services,1,2000,CAD
+30,9,1,Cloud Storage,1,10000,USD
+31,9,2,Computing Resources,1,8000,USD
+32,9,3,Network Services,1,4000,USD
+33,10,1,Equipment Inspection,1,4000,EUR
+34,10,2,Preventive Maintenance,1,3000,EUR
+35,10,3,Repair Services,1,2500,EUR
+36,11,1,Logo Design,1,5000,USD
+37,11,2,Brochure Design,1,4000,USD
+38,11,3,Website Graphics,1,3000,USD
+39,11,4,Print Materials,1,2000,USD
+40,12,1,Contract Review,1,12000,CAD
+41,12,2,Legal Research,1,8000,CAD
+42,12,3,Document Preparation,1,5000,CAD
+43,12,4,Court Representation,1,3000,CAD
+44,13,1,Solar Panels,200,25000,EUR
+45,13,2,Inverters,20,8000,EUR
+46,13,3,Mounting Systems,1,5000,EUR
+47,13,4,Electrical Components,1,3000,EUR
+48,13,5,Installation Labor,1,4000,EUR
+49,14,1,Catering Services,1,3000,USD
+50,14,2,Event Setup,1,2000,USD
+51,14,3,Audio Visual,1,1500,USD
+52,15,1,Microscopes,5,15000,CAD
+53,15,2,Centrifuge,2,8000,CAD
+54,15,3,Lab Chemicals,1,5000,CAD
+55,15,4,Glassware,1,2000,CAD
+56,15,5,Safety Equipment,1,2000,CAD
+57,16,1,Vehicle Maintenance,1,8000,EUR
+58,16,2,Fuel Management,1,4000,EUR
+59,16,3,Driver Training,1,2000,EUR
+60,16,4,GPS Systems,1,2000,EUR
+61,17,1,Digital Advertising,1,10000,USD
+62,17,2,Social Media Campaign,1,5000,USD
+63,17,3,Content Creation,1,3000,USD
+64,17,4,Analytics Reporting,1,1000,USD
+65,18,1,Construction Materials,1,30000,CAD
+66,18,2,Labor Costs,1,15000,CAD
+67,18,3,Equipment Rental,1,8000,CAD
+68,18,4,Project Management,1,2000,CAD
+69,19,1,Analytics Software,1,12000,EUR
+70,19,2,Data Processing,1,6000,EUR
+71,19,3,Reporting Tools,1,4000,EUR
+72,19,4,Training Services,1,2000,EUR
+73,20,1,Business Cards,5000,2000,USD
+74,20,2,Brochures,2000,3000,USD
+75,20,3,Banners,10,1500,USD
+76,20,4,Promotional Items,500,1000,USD
+77,21,1,Network Equipment,1,20000,CAD
+78,21,2,Installation Services,1,8000,CAD
+79,21,3,Configuration,1,5000,CAD
+80,21,4,Support Services,1,3000,CAD
+81,21,5,Documentation,1,2000,CAD
+82,22,1,Office Desks,20,8000,EUR
+83,22,2,Chairs,25,4000,EUR
+84,22,3,Storage Units,10,1500,EUR
+85,23,1,Enterprise License,1,15000,USD
+86,23,2,Implementation,1,8000,USD
+87,23,3,Training,1,4000,USD
+88,23,4,Support,1,2000,USD
+89,24,1,Daily Cleaning,1,4000,CAD
+90,24,2,Deep Cleaning,1,2500,CAD
+91,24,3,Supplies,1,1500,CAD
+92,24,4,Equipment,1,500,CAD
+93,25,1,Strategy Assessment,1,20000,EUR
+94,25,2,Process Optimization,1,12000,EUR
+95,25,3,Implementation Support,1,8000,EUR
+96,25,4,Change Management,1,2000,EUR
+97,26,1,Excavator Rental,1,8000,USD
+98,26,2,Crane Rental,1,6000,USD
+99,26,3,Transport Services,1,2500,USD
+100,26,4,Operator Services,1,1000,USD
+101,27,1,Property Insurance,1,12000,CAD
+102,27,2,Liability Coverage,1,6000,CAD
+103,27,3,Workers Compensation,1,3000,CAD
+104,28,1,Flight Bookings,1,6000,EUR
+105,28,2,Hotel Accommodations,1,3000,EUR
+106,28,3,Ground Transportation,1,1500,EUR
+107,28,4,Travel Insurance,1,500,EUR
+108,29,1,Product Boxes,10000,15000,USD
+109,29,2,Protective Packaging,5000,6000,USD
+110,29,3,Labels,20000,3000,USD
+111,29,4,Shipping Materials,1000,2000,USD
+112,30,1,Waste Collection,1,5000,CAD
+113,30,2,Recycling Services,1,2500,CAD
+114,30,3,Disposal Fees,1,1000,CAD
+115,30,4,Environmental Compliance,1,500,CAD
+116,31,1,Financial Audit,1,20000,EUR
+117,31,2,Compliance Review,1,8000,EUR
+118,31,3,Risk Assessment,1,3000,EUR
+119,31,4,Reporting,1,2000,EUR
+120,32,1,Executive Search,1,8000,USD
+121,32,2,Candidate Screening,1,4000,USD
+122,32,3,Interview Coordination,1,2000,USD
+123,32,4,Background Checks,1,1500,USD
+124,33,1,Testing Reagents,1,10000,CAD
+125,33,2,Lab Equipment,1,5000,CAD
+126,33,3,Calibration Services,1,2500,CAD
+127,33,4,Quality Standards,1,1000,CAD
+128,34,1,Venue Rental,1,6000,EUR
+129,34,2,Catering Services,1,3000,EUR
+130,34,3,Audio Visual Equipment,1,2000,EUR
+131,34,4,Event Coordination,1,1500,EUR
+132,35,1,Document Translation,1,4000,USD
+133,35,2,Interpretation Services,1,2500,USD
+134,35,3,Localization,1,1000,USD
+135,35,4,Quality Review,1,500,USD
+136,6,11,Inspection Tools,15,1500,USD
+137,6,12,Maintenance Supplies,50,2000,USD
+138,6,13,Cleaning Materials,30,800,USD
+139,6,14,Lubricants,25,1200,USD
+140,6,15,Spare Parts,40,3000,USD
+141,6,16,Testing Equipment,8,2500,USD
+142,6,17,Calibration Tools,12,1800,USD
+143,6,18,Safety Gear,60,1500,USD
+144,6,19,Work Gloves,100,500,USD
+145,6,20,Protective Clothing,80,1200,USD
+146,6,21,First Aid Supplies,20,300,USD
+147,6,22,Fire Extinguishers,15,750,USD
+148,6,23,Emergency Equipment,10,1000,USD
+149,6,24,Storage Containers,25,800,USD
+150,6,25,Transport Crates,30,1200,USD
+151,6,26,Handling Equipment,12,2000,USD
+152,6,27,Lifting Tools,18,1500,USD
+153,6,28,Measuring Instruments,20,2200,USD
+154,6,29,Documentation Supplies,50,400,USD
+155,6,30,Training Materials,15,600,USD
+156,18,5,Electrical Work,1,5000,CAD
+157,18,6,Plumbing,1,4000,CAD
+158,18,7,HVAC Installation,1,6000,CAD
+159,18,8,Flooring,1,8000,CAD
+160,18,9,Painting,1,3000,CAD
+161,18,10,Windows,1,7000,CAD
+162,18,11,Doors,1,4000,CAD
+163,18,12,Roofing,1,9000,CAD
+164,18,13,Insulation,1,3500,CAD
+165,18,14,Drywall,1,4500,CAD
+166,18,15,Fixtures,1,2500,CAD
+167,18,16,Hardware,1,1500,CAD
+168,18,17,Permits,1,2000,CAD
+169,18,18,Inspections,1,1000,CAD
+170,18,19,Cleanup,1,1500,CAD
+171,18,20,Landscaping,1,3000,CAD
+172,18,21,Security Systems,1,2500,CAD
+173,18,22,Fire Safety,1,2000,CAD
+174,18,23,Accessibility Features,1,3500,CAD
+175,18,24,Energy Efficiency,1,4000,CAD
+176,18,25,Waste Management,1,800,CAD
+177,18,26,Site Preparation,1,2200,CAD
+178,18,27,Foundation Work,1,6000,CAD
+179,18,28,Structural Steel,1,8000,CAD
+180,18,29,Concrete Work,1,5500,CAD
+181,18,30,Final Inspection,1,1000,CAD
+182,25,5,Market Analysis,1,5000,EUR
+183,25,6,Competitive Assessment,1,4000,EUR
+184,25,7,SWOT Analysis,1,3000,EUR
+185,25,8,Financial Modeling,1,6000,EUR
+186,25,9,Risk Analysis,1,3500,EUR
+187,25,10,Stakeholder Mapping,1,2500,EUR
+188,25,11,Communication Plan,1,2000,EUR
+189,25,12,Training Programs,1,4500,EUR
+190,25,13,Performance Metrics,1,3000,EUR
+191,25,14,Quality Assurance,1,2500,EUR
+192,25,15,Documentation,1,1500,EUR
+193,25,16,Project Management,1,3500,EUR
+194,25,17,Resource Planning,1,2800,EUR
+195,25,18,Timeline Development,1,2000,EUR
+196,25,19,Budget Planning,1,3200,EUR
+197,25,20,Vendor Management,1,2200,EUR
+198,25,21,Contract Negotiation,1,2800,EUR
+199,25,22,Legal Review,1,2000,EUR
+200,25,23,Compliance Check,1,1800,EUR
+201,25,24,Technology Assessment,1,3500,EUR
+202,25,25,Digital Transformation,1,4000,EUR
+203,25,26,Process Automation,1,3800,EUR
+204,25,27,Data Analytics,1,3200,EUR
+205,25,28,Reporting Systems,1,2500,EUR
+206,25,29,Knowledge Transfer,1,2000,EUR
+207,25,30,Final Presentation,1,1500,EUR
